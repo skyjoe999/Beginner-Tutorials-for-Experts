@@ -1,0 +1,21 @@
+.collapse_btn::after{
+	font-size: 0.6em;
+	color: aqua;
+	position: absolute;
+	content: '[Collapse]';
+	margin-left: 4mm;
+	cursor: pointer;
+}
+.collapse_btn:hover::after{
+	text-decoration: underline;
+}
+.collapsed .collapse_btn::after{
+	content: '[Expand]';
+}
+.collapsed .collapsable_content{
+	max-height: 0;
+}
+.collapsable_content{
+	transition: max-height 0.2s ease-out;
+	overflow: hidden;
+}

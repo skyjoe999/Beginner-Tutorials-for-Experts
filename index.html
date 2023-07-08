@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>BTfE</title>
+	</head>
+	<body>
+		<header>
+			<a class="logo">BTfE</a>
+			<a class="about">About</a>
+		</header>
+		<div class="search_container">
+			<div class="language_dropdown" id="i_know">
+				<span class="section">I already know</span>
+				<ul class="languages">
+					<hr>
+					<li>Java</li>
+					<li>Python</li>
+					<li>JavaScript</li>
+					<li>GDScript</li>
+					<li>C</li>
+					<li>C++</li>
+					<li>C#</li>
+				</ul>
+			</div>
+			<element class="spacer">&</element>
+			<div class="language_dropdown" id="to_know">
+				<span class="section">I want to know</span>
+			</div>
+		</div>
+		<a class="go_button">Go</a>
+		<script type="text/javascript">
+			i_know=document.getElementById('i_know')
+			i_know_sel=i_know.getElementsByClassName("section")[0]
+			to_know=document.getElementById('to_know')
+			to_know_sel=to_know.getElementsByClassName("section")[0]
+			document.documentElement.style.setProperty('--language_count',i_know.getElementsByClassName('languages')[0].getElementsByTagName('li').length)
+			to_know.append(i_know.getElementsByClassName('languages')[0].cloneNode(true))
+			update_ui=function(){
+				if (i_know_sel.textContent!='I already know' && to_know_sel.textContent!='I want to know') {
+					document.getElementsByClassName('go_button')[0].style='display: initial;'
+					document.getElementsByClassName('go_button')[0].href='compare.html#'+i_know_sel.textContent+'&'+to_know_sel.textContent
+				}
+			}
+			for (i of i_know.getElementsByTagName("li")){
+				i.onclick=function(event){
+					if (event.target.textContent==to_know_sel.textContent) {
+						if (i_know_sel.textContent=='I already know'){
+							to_know_sel.textContent='I want to know'
+						}else {
+							to_know_sel.textContent=i_know_sel.textContent
+						}
+					}
+					i_know_sel.textContent=event.target.textContent
+					update_ui()
+				}
+			}
+			for (i of to_know.getElementsByTagName("li")){
+				i.onclick=function(event){
+					if (event.target.textContent==i_know_sel.textContent) {
+						if (to_know_sel.textContent=='I want to know'){
+							i_know_sel.textContent='I already know'
+						}else {
+							i_know_sel.textContent=to_know_sel.textContent
+						}
+					}
+					to_know_sel.textContent=event.target.textContent
+					update_ui()
+				}
+			}
+		</script>
+	</body>
+</html>

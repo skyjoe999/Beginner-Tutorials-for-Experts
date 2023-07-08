@@ -1,0 +1,18 @@
+i{
+	font-style: inherit;
+}
+.num{
+	color: #007CBE;
+}
+.str{
+	color: #00AF54;
+}
+.const{
+	color: #FA824C;
+}
+.func{
+	color: #446DF6;
+}
+.flow{
+	color:#9A7BCC;
+}
