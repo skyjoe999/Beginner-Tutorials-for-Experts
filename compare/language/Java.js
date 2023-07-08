@@ -13,7 +13,7 @@ add_line('float %var%float% = 1.5f;')
 add_line('String %var%string% = "Hello";')
 add_line('boolean %var%bool% = true;')
 end_snippet()
-add_line('Variables are staticaly typed.')
+add_line('Variables are statically typed.')
 
 set_concept('if')
 begin_snippet()

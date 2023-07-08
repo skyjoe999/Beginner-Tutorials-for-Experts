@@ -14,7 +14,7 @@ add_line('%var%float% = 1.5')
 add_line('%var%string% = "Hello"')
 add_line('%var%bool% = True')
 end_snippet()
-add_line('Variables are dynamicaly typed.')
+add_line('Variables are dynamically typed.')
 add_line('Strings can use either single or double quotes.')
 
 set_concept('if')

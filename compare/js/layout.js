@@ -4,7 +4,7 @@ create_topic('Basics')
 create_header('Variables','var')
 
 create_topic('Conditionals')
-create_header('If Statments','if')
+create_header('If Statements','if')
 create_header('Logic','logic')
 create_header('Ternary Operator','ternary')
 
